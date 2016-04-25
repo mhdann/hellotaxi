@@ -1,0 +1,110 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" >
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" >
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" >
+
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+				
+            }
+			#map {
+				height: 600px;
+			}
+        </style>
+
+        <script src="{{ url_for('static', filename='js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
+    </head>
+    <body>
+	
+
+
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Hello, Taxi</a>
+		  <a class="navbar-brand" href="models.html">Models</a>
+		  <a class="navbar-brand" href="trends.html">Trends</a>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, Taxi!</h1>
+
+		<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+		
+		<script src="{{url_for('static', filename='js/test/g1.js')}}"></script>
+		<script src="{{url_for('static', filename='js/test/g2.js')}}"></script>
+		<script src="{{url_for('static', filename='js/test/statesdata.js')}}"></script>
+		<div id="map"> </div>
+ 
+		<script src="{{url_for('static', filename='js/test/taxi_stock.js')}}"></script>
+
+		<p>Relative taxi concentrations for a representative time</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Outline</h2>
+          <p>Finding a cab involves uncertainty. You may be looking at a peak hour or an impacted location. Hello, Taxi provides an estimate of available cab locations so you can reduce your wait by looking in the right places at the right time.</p>
+        </div>
+        <div class="col-md-4">
+          <h2>Models</h2>
+          <p>Using data recently released by the city of New York, historical cab pickups and dropoffs are used to estimate sources and sinks of empty cabs on the grid. A simple transport model is used to propagate empty cabs and develop pickup wait times.</p>
+          <p><a class="btn btn-default" href="models.html" role="button">More details &raquo;</a></p>
+       </div>
+	   <div class="col-md-4">
+          <h2>Trends</h2>
+          <p>Other signals have emerged from the data. Ridership is insensitive to rain. Taxi traffic "sleeps in" an hour and a half on weekends. Business travelers return from the airport at higher rates Monday morning through Monday afternoon. Highest fare-per-hour is during early morning.</p>
+          <p><a class="btn btn-default" href="trends.html" role="button">More details &raquo;</a></p>
+       </div>
+      </div>
+
+      <hr>
+
+      <footer>
+
+      </footer>
+	  
+    </div> <!-- /container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="{{url_for('static', filename='js/vendor/bootstrap.min.js')}}"></script>
+
+        <script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+    </body>
+</html>
