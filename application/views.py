@@ -26,4 +26,4 @@ def index():
 
 @app.route('/test')
 def test():
-    return render_template('/jay_test.html')
+    return render_template('/test.html')

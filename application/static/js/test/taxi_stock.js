@@ -1,10 +1,13 @@
-var map = L.map('map').setView([40.730, -73.930], 11);
+L.mapbox.accessToken = 'pk.eyJ1IjoibWlob2RhIiwiYSI6ImNpbWZkcXNoZjAxZDV1MWtrZ2c2ODRjbG4ifQ.9GPMk-5z0Af_Uba2zdJG2g';
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-	attribution: "Blart de blart",
-	id: "nyctaxi", 
-	accessToken: "pk.eyJ1IjoibWlob2RhIiwiYSI6ImNpbWZkcXNoZjAxZDV1MWtrZ2c2ODRjbG4ifQ.9GPMk-5z0Af_Uba2zdJG2g"
-}).addTo(map);
+var map = L.mapbox.map('map', 'mapbox.light',{
+    container: 'map',
+    style: 'mapbox://styles/mihoda/cingxlbqz0028axnmr67x77kc',
+    minZoom:12,
+    maxZoom:18
+})
+    .setView([40.730, -74.0], 11);
+
 
 
 function getColor(d) {
@@ -24,13 +27,13 @@ function style(feature) {
     return {
         fillColor: getColor(feature.properties.stock),
         weight: 2,
-        opacity: 1,
+        opacity: 0.2,
         color: 'white',
         dashArray: '3',
-        fillOpacity: 0.7
+        fillOpacity: 0.5
     };
 }
 
-L.geoJson(g2, {style: style}).addTo(map);
+var probs = L.geoJson(g1, {style: style}).addTo(map);
 
 
