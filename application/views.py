@@ -23,3 +23,7 @@ def index():
     #myplot = models.leaf_plot(data)
     params={}
     return render_template('index.html')
+
+@app.route('/test')
+def test():
+    return render_template('/jay_test.html')
